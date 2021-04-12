@@ -1,8 +1,18 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import "fonts";
 
 // Variables
-@import 'variables';
+@import "variables";
 
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";
+
+body {
+    min-height: 100vh;
+    height: 100vh;
+    width: 100vw;
+}
+
+.flipped {
+    transform: scaleX(-1);
+}

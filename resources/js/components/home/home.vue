@@ -1,6 +1,15 @@
 <template>
     <div id="home">
         <Top />
+        <Border>
+            <div class="content-container">
+                <Header />
+                <Content class="content">
+                    <div style="width: 100px; height: 10px; background: green;"></div>
+                </Content>
+                <Footer />
+            </div>
+        </Border>
     </div>
 </template>
 
@@ -12,34 +21,46 @@
     background: red;
     color: yellow;
 
-    display: grid;
+    padding: 5px;
 
-    grid-template-columns: 1fr 2fr 1fr;
-    grid-template-rows: 80px 4fr 2fr;
+    display: flex;
+    flex-direction: column;
 
     border: solid darkred 3rem;
     border-top-width: 1rem;
     border-bottom-width: 1rem;
 
-    grid-template-areas:
-        "top      top     top"
-        ".     . ."
-        ". . .";
-
     .chinese {
         font-family: "chinese_takeawayregular", serif;
     }
+
+    .content-container {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        .content {
+            flex: 1;
+        }
+    }
 }
-
-
 </style>
 
 <script>
 import Top from "./top"
+import Border from "./border"
+import Header from './header'
+import Content from './content'
+import Footer from './footer'
 
 export default {
   components: {
-    Top
+    Top,
+    Border,
+    Header,
+    Content,
+    Footer,
   }
 }
 </script>

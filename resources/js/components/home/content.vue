@@ -6,6 +6,9 @@
 
 <style lang="scss" scoped>
 .content {
-    padding: 3.5rem;
+    margin: 2.5rem 3.5rem 1.5rem;
+    padding: 1rem;
+    border: 1px solid #000;
+    background: #fffaf0;
 }
 </style>

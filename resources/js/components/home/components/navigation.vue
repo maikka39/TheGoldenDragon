@@ -1,8 +1,8 @@
 <template>
     <nav class="nav">
         <ul>
-            <li><router-link to="/menukaart">Menukaart</router-link></li>
-            <li><router-link to="/nieuws">Nieuws</router-link></li>
+            <li><router-link to="/menu">Menukaart</router-link></li>
+            <li><router-link to="/news">Nieuws</router-link></li>
             <li><router-link to="/contact">Contact</router-link></li>
         </ul>
     </nav>

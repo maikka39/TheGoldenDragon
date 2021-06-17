@@ -1,6 +1,10 @@
 import Vue from 'vue'
 import VueRouter from "vue-router"
 import Home from "./components/home/home"
+import HomeContact from "./components/home/pages/contact"
+import HomeDefault from "./components/home/pages/default"
+import HomeMenu from "./components/home/pages/menu"
+import HomeNews from "./components/home/pages/news"
 import CashRegister from "./components/cash_register"
 import Login from "./components/login"
 
@@ -10,7 +14,28 @@ const router = new VueRouter({
   mode: 'history',
   base: __dirname,
   routes: [
-    { path: '/', component: Home },
+    {
+      path: '/',
+      component: Home,
+      children: [
+        {
+          path: '',
+          component: HomeDefault,
+        },
+        {
+          path: 'menu',
+          component: HomeMenu,
+        },
+        {
+          path: 'news',
+          component: HomeNews,
+        },
+        {
+          path: 'contact',
+          component: HomeContact,
+        },
+      ]
+    },
     { path: '/cash', component: CashRegister, meta: {auth: true} },
     { path: '/login', component: Login },
     { path: '/logout',

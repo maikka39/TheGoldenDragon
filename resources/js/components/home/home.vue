@@ -5,7 +5,7 @@
             <div class="content-container">
                 <Header />
                 <Content class="content">
-                    <div style="width: 100px; height: 10px; background: green;"></div>
+                    <router-view></router-view>
                 </Content>
                 <Footer />
             </div>
@@ -42,17 +42,21 @@
 
         .content {
             flex: 1;
+            color: #000000;
+            font-weight: 700;
+            text-align: center;
+            font-size: 1.15rem;
         }
     }
 }
 </style>
 
 <script>
-import Top from "./top"
-import Border from "./border"
-import Header from './header'
-import Content from './content'
-import Footer from './footer'
+import Top from "./components/top"
+import Border from "./components/border"
+import Header from './components/header'
+import Content from './components/content'
+import Footer from './components/footer'
 
 export default {
   components: {

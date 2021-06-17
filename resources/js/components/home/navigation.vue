@@ -1,9 +1,9 @@
 <template>
     <nav class="nav">
         <ul>
-            <li>Menukaart</li>
-            <li>Nieuws</li>
-            <li>Contact</li>
+            <li><router-link to="/menukaart">Menukaart</router-link></li>
+            <li><router-link to="/nieuws">Nieuws</router-link></li>
+            <li><router-link to="/contact">Contact</router-link></li>
         </ul>
     </nav>
 </template>
@@ -35,6 +35,11 @@
             font-size: 1.5rem;
             line-height: 1.2em;
             background: linear-gradient(0deg, #1135ff 0%, #0081ff 50%, #00fffc 100%);
+
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
         }
     }
 }

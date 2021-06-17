@@ -1,6 +1,6 @@
 <template>
     <div class="footer">
-        <a href="/contact">Naar Contact</a>
+        <router-link to="/contact">Naar Contact</router-link>
     </div>
 </template>
 

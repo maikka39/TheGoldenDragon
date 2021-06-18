@@ -1,20 +1,20 @@
 <template>
     <div class="top">
-        <div class="logo">
+        <router-link to="/" class="logo">
             <img src="/img/dragon-small.png" alt="Draak">
             <span class="chinese">De Gouden Draak</span>
             <img src="/img/dragon-small.png" alt="Draak" class="flipped">
-        </div>
+        </router-link>
         <div class="scrolling-text">
             <a class="scroll" href="#">
                 Welkom bij De Gouden Draak. Klik op deze tekst om de aanbiedingen van deze week te zien!
             </a>
         </div>
-        <div class="logo">
+        <router-link to="/" class="logo">
             <img src="/img/dragon-small.png" alt="Draak">
             <span class="chinese">De Gouden Draak</span>
             <img src="/img/dragon-small.png" alt="Draak" class="flipped">
-        </div>
+        </router-link>
     </div>
 </template>
 
@@ -34,6 +34,8 @@
         flex: 1;
         display: inline-block;
         padding: 0 2rem;
+        text-decoration: none;
+        color: inherit;
 
         font-size: 1.6rem;
 

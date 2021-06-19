@@ -1,9 +1,15 @@
 <?php
 
+use App\Http\Resources\MenuItemResource;
+use App\Models\MenuItem;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
+
+Route::get('/menuitems', function () {
+    return MenuItemResource::collection(MenuItem::all());
+});
 
 Route::post('/login', function (Request $request) {
     $data = $request->validate([

@@ -15,10 +15,13 @@ class AddMenuitems extends Migration
     {
         Schema::create('menu_items', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->unique();
+            $table->string('name');
             $table->double('price', 10, 2);
-            $table->text('description');
-            $table->integer('number');
+            $table->text('description')->nullable();
+            $table->integer('number')->nullable();
+            $table->string('number_addition')->nullable();
+
+            $table->unique(array('number', 'number_addition'));
         });
     }
 

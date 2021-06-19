@@ -19,5 +19,6 @@ class MenuItem extends Model
         'price',
         'description',
         'number',
+        'number_addition',
     ];
 }

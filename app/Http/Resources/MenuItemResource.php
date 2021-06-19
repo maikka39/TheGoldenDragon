@@ -2,9 +2,9 @@
 
 namespace App\Http\Resources;
 
-use Illuminate\Http\Resources\Json\ResourceCollection;
+use Illuminate\Http\Resources\Json\JsonResource;
 
-class MenuItemResource extends ResourceCollection
+class MenuItemResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -19,6 +19,7 @@ class MenuItemResource extends ResourceCollection
             'price' => $this->price,
             'description' => $this->description,
             'number' => $this->number,
+            'number_addition' => $this->number_addition,
         ];
     }
 }

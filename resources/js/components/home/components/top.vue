@@ -2,17 +2,17 @@
     <div class="top">
         <router-link to="/" class="logo">
             <img src="/img/dragon-small.png" alt="Draak">
-            <span class="chinese">De Gouden Draak</span>
+            <span class="chinese">{{ $t("general.name") }}</span>
             <img src="/img/dragon-small.png" alt="Draak" class="flipped">
         </router-link>
         <div class="scrolling-text">
             <a class="scroll" href="#">
-                Welkom bij De Gouden Draak. Klik op deze tekst om de aanbiedingen van deze week te zien!
+                {{ $t("sliding_text.text") }}
             </a>
         </div>
         <router-link to="/" class="logo">
             <img src="/img/dragon-small.png" alt="Draak">
-            <span class="chinese">De Gouden Draak</span>
+            <span class="chinese">{{ $t("general.name") }}</span>
             <img src="/img/dragon-small.png" alt="Draak" class="flipped">
         </router-link>
     </div>

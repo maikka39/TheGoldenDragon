@@ -1,6 +1,7 @@
 <template>
     <div class="footer">
-        <router-link to="/contact">Naar Contact</router-link>
+        <router-link to="/contact">{{ $t("footer.to_contact") }}</router-link>
+        <LocaleSwitcher />
     </div>
 </template>
 
@@ -14,3 +15,13 @@
     }
 }
 </style>
+
+<script>
+import LocaleSwitcher from "./locale_switcher"
+
+export default {
+  components: {
+    LocaleSwitcher,
+  }
+}
+</script>

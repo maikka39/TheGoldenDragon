@@ -1,17 +1,17 @@
 import Vue from 'vue'
-import axios from 'axios'
-
-import 'bootstrap'
-
+import App from './components/app.vue'
 import router from './router'
 import store from './store'
-import App from './components/app.vue'
+import axios from 'axios'
+import i18n from "./i18n";
 
+import 'bootstrap'
 
 new Vue({
     el: '#app',
     router,
     store,
+    i18n,
     render: h => h(App),
     created () {
         const userInfo = localStorage.getItem('user')

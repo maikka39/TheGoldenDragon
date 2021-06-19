@@ -1,9 +1,9 @@
 <template>
     <nav class="nav">
         <ul>
-            <li><router-link to="/menu">Menukaart</router-link></li>
-            <li><router-link to="/news">Nieuws</router-link></li>
-            <li><router-link to="/contact">Contact</router-link></li>
+            <li><router-link to="/menu">{{ $t("navigation.menu") }}</router-link></li>
+            <li><router-link to="/news">{{ $t("navigation.news") }}</router-link></li>
+            <li><router-link to="/contact">{{ $t("navigation.contact") }}</router-link></li>
         </ul>
     </nav>
 </template>

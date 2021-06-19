@@ -2,8 +2,8 @@
     <div class="header">
         <img src="/img/dragon-large.png" alt="Draak" class="logo">
         <div class="center-info">
-            <h1 class="title">De Gouden Draak</h1>
-            <strong class="info">Chinees Indische Specialiteiten</strong>
+            <h1 class="title">{{ $t("general.name") }}</h1>
+            <strong class="info">{{ $t("header.subtitle") }}</strong>
             <Navigation class="nav" />
         </div>
         <img src="/img/dragon-large.png" alt="Draak" class="logo flipped">

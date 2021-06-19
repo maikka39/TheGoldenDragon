@@ -30,6 +30,8 @@
     border-top-width: 1rem;
     border-bottom-width: 1rem;
 
+    white-space: pre-line;
+
     .chinese {
         font-family: "chinese_takeawayregular", serif;
     }

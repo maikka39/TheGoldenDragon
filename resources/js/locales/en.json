@@ -1,0 +1,45 @@
+{
+    "general": {
+        "name": "De Gouden Draak"
+    },
+    "sliding_text": {
+        "text": "Welcome to De Gouden Draak. Click on this text to see this week's offers!"
+    },
+    "navigation": {
+        "menu": "Menu",
+        "news": "News",
+        "contact": "Contact"
+    },
+    "header": {
+        "subtitle": "Chinese Indian Specialties"
+    },
+    "footer": {
+        "to_contact": "To contact"
+    },
+    "pages": {
+        "home": {
+            "best_takeaway_meals": "For years, De Gouden Draak has been the restaurant when it comes to the best takeaway dishes in 's-Hertogenbosch.",
+            "authentic_meals": "We are happy to treat you to authentic dishes from the Cantonese cuisine.",
+            "student_sale": "Special Student Offer",
+            "chinese_rice_table": "Chinese Rice Table (2 persons)",
+            "three_meal_choices": "Choose from 3 of the following dishes:",
+            "meals": {
+                "koe_loe_yuk": "Koe Loe Yuk",
+                "foe_yong_hai": "Foe Yong Hai",
+                "tjap_tjoy": "Tjap Tjoy",
+                "shrimp": "Shrimp with Fried Garlic",
+                "babi_pangang": "Babi Pangang",
+                "chicken_breast": "Chicken breast in Black Bean sauce"
+            },
+            "with_white_rice": "With white rice. (Nasi or noodles for an extra charge.)",
+            "price": "Price"
+        },
+        "contact": {
+            "description": "De Gouden Draak is easy to find, close to the center, a 5-minute walk behind the central station.",
+            "address": "Onderwijsboulevard 215, room OG112\n5223 DE 's-Hertogenbosch"
+        },
+        "news": {
+            "content": "Due to the Corona crisis, De Gouden Draak is only open to a limited extent at the moment.\nThe restaurant area is closed. You can still pick up your favorite dishes."
+        }
+    }
+}

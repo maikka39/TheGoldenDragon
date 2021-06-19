@@ -1,25 +1,25 @@
 <template>
     <div>
-        <p>Al jaren is De Gouden Draak een begrip als het gaat om de beste afhaalgerechten in 's-Hertogenbosch.</p>
-        <p>Graag trakteren we u op authentieke gerechten uit de Cantonese keuken.</p>
+        <p>{{ $t("pages.home.best_takeaway_meals") }}</p>
+        <p>{{ $t("pages.home.authentic_meals") }}</p>
 
         <div>
-            <h2>Speciale Studentenaanbieding</h2>
-            <h3>Chinese Rijsttafel (2 personen)</h3>
+            <h2>{{ $t("pages.home.student_sale") }}</h2>
+            <h3>{{ $t("pages.home.chinese_rice_table") }}</h3>
             <p>
-                Maak een keuze uit 3 van onderstaande keuzegerechten:
+                {{ $t("pages.home.three_meal_choices") }}
             </p>
             <ul>
-                <li>Koe Loe Yuk</li>
-                <li>Foe Yong Hai</li>
-                <li>Tjap Tjoy</li>
-                <li>Garnalen met Gebakken Knoflook</li>
-                <li>Babi Pangang</li>
-                <li>Kipfilet in Zwarte Bonen saus</li>
+                <li>{{ $t("pages.home.meals.koe_loe_yuk") }}</li>
+                <li>{{ $t("pages.home.meals.foe_yong_hai") }}</li>
+                <li>{{ $t("pages.home.meals.tjap_tjoy") }}</li>
+                <li>{{ $t("pages.home.meals.shrimp") }}</li>
+                <li>{{ $t("pages.home.meals.babi_pangang") }}</li>
+                <li>{{ $t("pages.home.meals.chicken_breast") }}</li>
             </ul>
-            <p>Met witte rijst. (Nasi of bami voor meerprijs mogelijk.)</p>
+            <p>{{ $t("pages.home.with_white_rice") }}</p>
             <p>
-                <strong>Prijs: €21,00</strong>
+                <strong>{{ $t("pages.home.price") }}: €21,00</strong>
             </p>
         </div>
     </div>

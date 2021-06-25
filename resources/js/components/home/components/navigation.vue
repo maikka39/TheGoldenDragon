@@ -10,12 +10,10 @@
 
 <style lang="scss" scoped>
 .nav {
-    width: max-content;
-
     ul {
         display: flex;
         flex-direction: row;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
         list-style: none;
         border-spacing: 2px;
         border-color: grey;
@@ -25,7 +23,6 @@
         padding: 0;
         align-content: center;
         justify-content: center;
-        width: max-content;
 
         li {
             padding: .1rem 2rem;

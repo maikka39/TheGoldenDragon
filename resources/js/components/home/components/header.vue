@@ -63,7 +63,8 @@
     }
 
     .logo {
-        height: 200px;
+        height: 20vw;
+        max-height: 200px;
         justify-self: left;
 
         &:nth-child(3) {

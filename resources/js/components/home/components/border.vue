@@ -15,7 +15,11 @@
     border-image-outset: 0;
     border-image-repeat: repeat;
 
-    padding: 60px;
+    padding: 100px;
+
+    @media screen and (max-width: 1220px) {
+        padding: 60px;
+    }
 }
 </style>
 

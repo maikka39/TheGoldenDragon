@@ -40,6 +40,9 @@
         },
         "news": {
             "content": "Due to the Corona crisis, De Gouden Draak is only open to a limited extent at the moment.\nThe restaurant area is closed. You can still pick up your favorite dishes."
+        },
+        "menu": {
+            "title": "Menu"
         }
     }
 }

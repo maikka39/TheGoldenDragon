@@ -32,6 +32,10 @@
 
     white-space: pre-line;
 
+    @media screen and (max-width: 860px) {
+        border-width: 1rem;
+    }
+
     .chinese {
         font-family: "chinese_takeawayregular", serif;
     }

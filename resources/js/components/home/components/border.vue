@@ -15,7 +15,7 @@
     border-image-outset: 0;
     border-image-repeat: repeat;
 
-    padding: 100px;
+    padding: 60px;
 }
 </style>
 

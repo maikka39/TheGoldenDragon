@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import VueRouter from "vue-router"
 import Home from "./components/home/home"
-import HomeContact from "./components/home/pages/contact"
-import HomeDefault from "./components/home/pages/default"
-import HomeMenu from "./components/home/pages/menu"
-import HomeNews from "./components/home/pages/news"
+import HomeContact from "./components/home/pages/contact/contact"
+import HomeDefault from "./components/home/pages/default/default"
+import HomeMenu from "./components/home/pages/menu/menu"
+import HomeNews from "./components/home/pages/news/news"
 import CashRegister from "./components/cash_register"
 import Login from "./components/login"
 

@@ -29,18 +29,41 @@
 
     padding: 5px 10px;
 
+    @media screen and (max-width: 960px) {
+        flex-direction: column;
+    }
+
 
     .logo {
         flex: 1;
         display: inline-block;
-        padding: 0 2rem;
+        padding: 0 1rem;
         text-decoration: none;
         color: inherit;
+        text-align: center;
+        white-space: nowrap;
 
         font-size: 1.6rem;
 
         img {
-            height: 60px;
+            height: 10vw;
+            max-height: 50px;
+        }
+
+        @media screen and (max-width: 1220px) {
+            font-size: 1.4rem;
+        }
+
+        @media screen and (max-width: 960px) {
+            padding: 0;
+
+            &:not(:first-of-type) {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width: 420px) {
+            font-size: 1.2rem;
         }
     }
     .scrolling-text {
@@ -51,6 +74,13 @@
         position: relative;
         display: inline-block;
         height: 1.2em;
+
+        @media screen and (max-width: 960px) {
+            width: 80%;
+            min-height: 1.2em;
+            display: block;
+            margin: 1rem;
+        }
 
         .scroll {
             text-decoration: none;

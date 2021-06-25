@@ -16,6 +16,10 @@
 
             list-style: none;
             padding: 2rem;
+
+            @media screen and (max-width: 860px) {
+                padding: 0;
+            }
     }
 }
 </style>

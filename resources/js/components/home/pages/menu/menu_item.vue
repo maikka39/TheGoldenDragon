@@ -1,6 +1,6 @@
 <template>
     <div class="menu_item">
-        <h3 class="name" v-html="name"></h3>
+        <h4 class="name" v-html="name"></h4>
         <span class="number">{{ number }}{{ number_addition }}.</span>
         <p class="description" v-html="description"></p>
         <span class="price">€{{ price | formatNumber }}</span>
@@ -26,6 +26,7 @@
     .name {
         order: 1;
         margin: 10px;
+        font-size: 1.2rem;
     }
 
     .number {

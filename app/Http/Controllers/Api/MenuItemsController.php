@@ -24,9 +24,9 @@ class MenuItemsController extends Controller
 
     public function pdf()
     {
-        $data = MenuItem::all();
+        $data = Category::all();
         $pdf = App::make('dompdf.wrapper');
-        view()->share('menuitems', $data);
+        view()->share('categories', $data);
         $pdf->loadView('pdf.menu', $data);
         return $pdf->stream();
         // return $pdf->download('menu.pdf');

@@ -21,6 +21,7 @@ class MenuItemResource extends JsonResource
             'description' => $this->description,
             'number' => $this->number,
             'number_addition' => $this->number_addition,
+            'category_id' => $this->category_id,
         ];
     }
 }

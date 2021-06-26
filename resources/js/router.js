@@ -7,6 +7,9 @@ import HomeMenu from "./components/home/pages/menu/menu"
 import HomeNews from "./components/home/pages/news/news"
 import CashRegister from "./components/cash_register"
 import Login from "./components/login"
+import Admin from "./components/admin/admin"
+import AdminDefault from "./components/admin/pages/default/default"
+import NotFound from "./components/not_found"
 
 Vue.use(VueRouter)
 
@@ -36,14 +39,32 @@ const router = new VueRouter({
         },
       ]
     },
+    {
+      path: '/admin',
+      component: Admin,
+      children: [
+        {
+          path: '',
+          component: AdminDefault,
+        },
+      ]
+    },
     { path: '/cash', component: CashRegister, meta: {auth: true} },
-    { path: '/login', component: Login },
+    { path: '/login', beforeEnter (to, from, next) {
+        const loggedIn = localStorage.getItem('user')
+
+      if (loggedIn)
+        next('/admin')
+
+      next()
+      }, component: Login },
     { path: '/logout',
       beforeEnter (to, from, next) {
-        auth.logout()
+        localStorage.removeItem('user')
         next('/')
       }
-    }
+    },
+    { path: '*', component: NotFound }
   ]
 })
 

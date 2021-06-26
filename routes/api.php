@@ -7,4 +7,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/menuitems', [MenuItemsController::class, 'items']);
 Route::get('/menuitems/pdf', [MenuItemsController::class, 'pdf']);
 
+Route::get('/categories', [MenuItemsController::class, 'categories']);
+
 Route::post('/login', [AuthenticationController::class, 'login']);

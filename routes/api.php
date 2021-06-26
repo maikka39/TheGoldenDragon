@@ -1,16 +1,13 @@
 <?php
 
-use App\Http\Resources\MenuItemCollection;
-use App\Http\Resources\MenuItemResource;
-use App\Models\MenuItem;
+use App\Http\Controllers\Api\MenuItemsController;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/menuitems', function () {
-    return new MenuItemCollection(MenuItem::all());
-});
+Route::get('/menuitems', [MenuItemsController::class, 'items'])->name("menuitems.items");
+Route::get('/menuitems/pdf', [MenuItemsController::class, 'pdf'])->name("menuitems.pdf");
 
 Route::post('/login', function (Request $request) {
     $data = $request->validate([

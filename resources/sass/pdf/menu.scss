@@ -1,0 +1,58 @@
+.title {
+    text-align: center;
+
+    h1 {
+        font-size: 2rem;
+        margin: 0;
+    }
+
+    h2 {
+        font-size: 4rem;
+        margin: 0;
+    }
+}
+
+.menu_items {
+    text-align: center;
+    .items {
+        list-style: none;
+        padding: 2rem;
+    }
+
+    .menu_item {
+        text-align: start;
+        border-bottom: 0.1rem solid #424242;
+
+        .main {
+            position: relative;
+        }
+
+        .name {
+            margin: 10px;
+            display: inline;
+        }
+
+        .number {
+            display: inline;
+        }
+
+        .description {
+            word-wrap: break-word;
+            margin: 5px;
+            font-style: italic;
+
+            &:empty {
+                margin: 0;
+            }
+        }
+
+        .price {
+            display: block;
+            float: right;
+        }
+    }
+}
+
+.page-break {
+    page-break-after: always;
+}

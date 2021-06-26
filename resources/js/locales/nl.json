@@ -42,7 +42,8 @@
             "content": "Door de Corona crisis is De Gouden Draak op het moment slechts beperkt open.\nHet restaurant-gedeelte is gesloten. U kan uw favoriete gerechten nog wel afhalen."
         },
         "menu": {
-            "title": "Menu"
+            "title": "Menu",
+            "download": "Download"
         }
     }
 }

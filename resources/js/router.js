@@ -8,6 +8,7 @@ import HomeNews from "./components/home/pages/news/news"
 import Login from "./components/login"
 import CashRegister from "./components/cash_register/cash_register"
 import CashRegisterDefault from "./components/cash_register/pages/default/default"
+import CashRegisterMenu from "./components/cash_register/pages/menu/menu"
 import NotFound from "./components/not_found"
 
 Vue.use(VueRouter)
@@ -48,6 +49,10 @@ const router = new VueRouter({
         {
           path: '',
           component: CashRegisterDefault,
+        },
+        {
+          path: 'menu',
+          component: CashRegisterMenu,
         },
       ]
     },

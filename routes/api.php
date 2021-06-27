@@ -2,10 +2,13 @@
 
 use App\Http\Controllers\Api\AuthenticationController;
 use App\Http\Controllers\Api\MenuItemsController;
+use App\Http\Controllers\Api\OrdersController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/menuitems', [MenuItemsController::class, 'items']);
 Route::get('/menuitems/pdf', [MenuItemsController::class, 'pdf']);
+
+Route::post('/orders/create', [OrdersController::class, 'create']);
 
 Route::get('/categories', [MenuItemsController::class, 'categories']);
 

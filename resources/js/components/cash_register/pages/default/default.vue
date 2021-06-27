@@ -31,7 +31,7 @@
             <h3 class="title">Totaal</h3>
             <span class="amount">{{ euro(getTotal()) }}</span>
             <div class="buttons">
-                <button class="other" type="button" @click="addItem(item)">Afrekenen</button>
+                <button class="other" type="button" @click="submit()">Afrekenen</button>
                 <button class="other" type="button" @click="clearOrder()">Verwijderen</button>
             </div>
         </div>
@@ -223,6 +223,15 @@ export default {
 
         getTotal() {
             return this.order_items.map(item => item.amount * item.price).reduce((a, b) => a + b, 0)
+        },
+        submit() {
+            axios.post("/orders/create", this.order_items.map(item => {return {
+                id: item.id,
+                amount: item.amount,
+            }})).then(() => {
+                alert("Order verwerkt")
+                this.order_items = []
+            })
         },
     }
 }

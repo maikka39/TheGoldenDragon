@@ -1,16 +1,16 @@
 <template>
     <nav class="nav">
-        <ul>
-            <li><router-link to="/menu">{{ $t("navigation.menu") }}</router-link></li>
-            <li><router-link to="/news">{{ $t("navigation.news") }}</router-link></li>
-            <li><router-link to="/contact">{{ $t("navigation.contact") }}</router-link></li>
+        <ul class="items">
+            <li class="item"><router-link to="/menu">{{ $t("navigation.menu") }}</router-link></li>
+            <li class="item"><router-link to="/news">{{ $t("navigation.news") }}</router-link></li>
+            <li class="item"><router-link to="/contact">{{ $t("navigation.contact") }}</router-link></li>
         </ul>
     </nav>
 </template>
 
 <style lang="scss" scoped>
 .nav {
-    ul {
+    .items {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -24,7 +24,7 @@
         align-content: center;
         justify-content: center;
 
-        li {
+        .item {
             padding: .1rem 2rem;
             margin: .1rem;
             color: #ffffff;

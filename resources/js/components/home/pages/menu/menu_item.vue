@@ -3,7 +3,7 @@
         <h4 class="name" v-html="name"></h4>
         <span class="number">{{ number }}{{ number_addition }}.</span>
         <p class="description" v-html="description"></p>
-        <span class="price">€{{ price | formatNumber }}</span>
+        <span class="price">{{ euro(price) }}</span>
     </div>
 </template>
 
@@ -82,6 +82,16 @@ export default {
     description: String,
     number: Number,
     number_addition: String,
-  }
+  },
+  methods: {
+        euro(price) {
+            let f = new Intl.NumberFormat('nl-NL', {
+                style: 'currency',
+                currency: 'EUR',
+            });
+
+            return f.format(price);
+        },
+  },
 }
 </script>

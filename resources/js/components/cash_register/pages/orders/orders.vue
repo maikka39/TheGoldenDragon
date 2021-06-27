@@ -51,6 +51,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        padding: 1rem;
+        height: 75vh;
 
         .order-items {
             border: 1px solid #0066ff;

@@ -5,10 +5,9 @@ import HomeContact from "./components/home/pages/contact/contact"
 import HomeDefault from "./components/home/pages/default/default"
 import HomeMenu from "./components/home/pages/menu/menu"
 import HomeNews from "./components/home/pages/news/news"
-import CashRegister from "./components/cash_register"
 import Login from "./components/login"
-import Admin from "./components/admin/admin"
-import AdminDefault from "./components/admin/pages/default/default"
+import CashRegister from "./components/cash_register/cash_register"
+import CashRegisterDefault from "./components/cash_register/pages/default/default"
 import NotFound from "./components/not_found"
 
 Vue.use(VueRouter)
@@ -40,21 +39,23 @@ const router = new VueRouter({
       ]
     },
     {
-      path: '/admin',
-      component: Admin,
+      path: '/cashregister',
+      meta: {
+        auth: true,
+      },
+      component: CashRegister,
       children: [
         {
           path: '',
-          component: AdminDefault,
+          component: CashRegisterDefault,
         },
       ]
     },
-    { path: '/cash', component: CashRegister, meta: {auth: true} },
     { path: '/login', beforeEnter (to, from, next) {
         const loggedIn = localStorage.getItem('user')
 
       if (loggedIn)
-        next('/admin')
+        next('/cashregister')
 
       next()
       }, component: Login },

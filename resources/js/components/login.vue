@@ -26,7 +26,7 @@ export default {
           password: this.password
         })
         .then(() => {
-          this.$router.push({ path: '/admin' })
+          this.$router.push({ path: '/cashregister' })
         })
         .catch(err => {
           console.log(err)

@@ -105,6 +105,8 @@
 </style>
 
 <script>
+import axios from "axios"
+
 export default {
     data: () => ({
         categories: [],
@@ -112,14 +114,10 @@ export default {
         order_items: [],
     }),
     created() {
-        fetch("/api/categories")
-            .then(response => response.json())
-            .then(data => (this.categories = data.data))
-        fetch("/api/menuitems")
-            .then(response => response.json())
-            .then(data => (this.menu_items = data.data.sort((e1, e2) => {
-                return e1.number > e2.number
-            })))
+        axios.get("/categories")
+            .then(data => (this.categories = data.data.data))
+        axios.get("/menuitems")
+            .then(data => (this.menu_items = data.data.data))
     },
     methods: {
         euro(price) {

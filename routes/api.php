@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/menuitems', [MenuItemsController::class, 'items']);
 Route::get('/menuitems/pdf', [MenuItemsController::class, 'pdf']);
 
+Route::get('/orders/items', [OrdersController::class, 'items']);
 Route::post('/orders/create', [OrdersController::class, 'create']);
 
 Route::get('/categories', [MenuItemsController::class, 'categories']);

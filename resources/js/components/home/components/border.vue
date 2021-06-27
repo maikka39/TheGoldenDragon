@@ -7,7 +7,7 @@
 <style lang="scss">
 .custom-border {
     width: 100%;
-    height: 100%;
+    min-height: 100%;
 
     border-image-source: url('/img/border.png');
     border-image-slice: 110 fill;

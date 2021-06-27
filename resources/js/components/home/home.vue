@@ -1,7 +1,7 @@
 <template>
     <div id="home">
         <Top />
-        <Border>
+        <Border class="border">
             <div class="content-container">
                 <Header />
                 <Content class="content">
@@ -15,7 +15,7 @@
 
 <style lang="scss">
 #home {
-    height: 100%;
+    min-height: 100%;
     width: 100%;
 
     background: red;
@@ -32,6 +32,11 @@
 
     white-space: pre-line;
 
+    .border {
+        flex: 1;
+        display: flex;
+    }
+
     @media screen and (max-width: 860px) {
         border-width: 1rem;
     }
@@ -41,7 +46,6 @@
     }
 
     .content-container {
-        height: 100%;
         width: 100%;
         display: flex;
         flex-direction: column;

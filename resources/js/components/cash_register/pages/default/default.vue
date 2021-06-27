@@ -1,10 +1,13 @@
 <template>
     <div id="default">
         <div class="menu-items items-container">
+            <div class="search">
+                <input class="input" type="text" min="0" v-model="search_string">
+            </div>
             <div v-for="category in categories" :key="category.id">
                 <h3 class="title">{{ category.name }}</h3>
                 <ul class="items">
-                    <div class="item" v-for="item in menu_items.filter(menu_item => menu_item.category_id === category.id)" :key="item.id">
+                    <div class="item" v-for="item in menu_items.filter(menu_item => menu_item.category_id === category.id && (menu_item.name.toLowerCase().includes(search_string.toLowerCase()) || (menu_item.number !== null ? (menu_item.number.toString().startsWith(search_string)) : false)))" :key="item.id">
                         <h4 class="name" v-html="item.name"></h4>
                         <span class="number">{{ item.number }}{{ item.number_addition }}.</span>
                         <p class="description" v-html="item.description"></p>
@@ -85,6 +88,16 @@
         text-align: center;
     }
 
+    .search {
+        margin: 1rem auto;
+        width: 80%;
+        padding: 0 2rem;
+
+        .input {
+            width: 100%;
+        }
+    }
+
     .items-container {
         overflow-y: scroll;
     }
@@ -162,6 +175,7 @@ export default {
         categories: [],
         menu_items: [],
         order_items: [],
+        search_string: "",
     }),
     created() {
         axios.get("/categories")

@@ -20,6 +20,10 @@ body {
     transform: scaleX(-1);
 }
 
+.hidden {
+    display: none;
+}
+
 * {
     box-sizing: border-box;
 }

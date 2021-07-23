@@ -30,7 +30,13 @@
                     <h4 class="name" v-html="item.name"></h4>
                     <span class="number">{{ item.number }}{{ item.number_addition }}.</span>
                     <span class="price">{{ euro(item.price * item.amount) }}</span>
-                    <input class="other" type="number" min="0" v-model.number="item.amount" @change="updateItem(item)">
+                    <div class="other">
+                        <input type="number" min="0" v-model.number="item.amount" @change="updateItem(item)">
+                        <button @click="toggleRemarks" class="remarks-button">...</button>
+                    </div>
+                    <div class="remarks hidden">
+                        <textarea class="text-entry" name="remarks" v-model.trim="item.remarks"></textarea>
+                    </div>
                 </div>
             </ul>
         </div>
@@ -70,6 +76,17 @@
 
     .order-items {
         grid-area: order;
+
+        .remarks {
+            height: 5em;
+            order: 99;
+
+            .text-entry {
+                position: absolute;
+                width: 100%;
+                height: 5em;
+            }
+        }
     }
 
     .total {
@@ -123,6 +140,7 @@
             text-align: start;
             gap: 0;
             border-bottom: .1rem solid #424242;
+            position: relative;
 
             .name {
                 order: 1;
@@ -211,6 +229,11 @@ export default {
             return f.format(price)
         },
 
+        toggleRemarks(event) {
+            let remarks = event.target.parentElement.parentElement.getElementsByClassName("remarks")[0]
+            remarks.classList.toggle("hidden")
+        },
+
         addItem(item) {
             if (this.order_items.includes(item)) {
                 let order_item = this.order_items.find(oi => oi.id === item.id)
@@ -248,6 +271,7 @@ export default {
             axios.post("/orders/create", this.order_items.map(item => {return {
                 id: item.id,
                 amount: item.amount,
+                remarks: item.remarks ?? "",
             }})).then(() => {
                 alert("Order verwerkt")
                 this.order_items = []

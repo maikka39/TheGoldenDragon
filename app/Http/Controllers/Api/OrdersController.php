@@ -23,8 +23,7 @@ class OrdersController extends Controller
                 'date' => Date::now(),
             ]);
             foreach ($request->all() as $item) {
-                $order->menuItems()->attach($item["id"], ["amount" => $item["amount"]]);
-                // echo $item["id"] . ": " . $item["amount"] . "<br>";
+                $order->menuItems()->attach($item["id"], ["amount" => $item["amount"], "remarks" => $item["remarks"]]);
             }
         });
     }

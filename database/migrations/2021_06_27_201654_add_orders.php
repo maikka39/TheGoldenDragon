@@ -23,6 +23,7 @@ class AddOrders extends Migration
             $table->unsignedBigInteger('order_id');
             $table->unsignedBigInteger('menu_item_id');
             $table->integer('amount');
+            $table->text('remarks')->nullable();
 
             $table->foreign('order_id')->references('id')->on('orders');
             $table->foreign('menu_item_id')->references('id')->on('menu_items');

@@ -7,7 +7,12 @@
             <div v-for="category in categories" :key="category.id">
                 <h3 class="title">{{ category.name }}</h3>
                 <ul class="items">
-                    <div class="item" v-for="item in menu_items.filter(menu_item => menu_item.category_id === category.id && (menu_item.name.toLowerCase().includes(search_string.toLowerCase()) || (menu_item.number !== null ? (menu_item.number.toString().startsWith(search_string)) : false)))" :key="item.id">
+                    <div class="item" v-for="item in menu_items.filter(menu_item => 
+                        menu_item.category_id === category.id && (
+                            menu_item.name.toLowerCase().includes(search_string.toLowerCase()) ||
+                            (menu_item.number !== null ? (menu_item.number.toString().startsWith(search_string)) : false) ||
+                            category.name.toLowerCase().includes(search_string.toLowerCase())
+                        ))" :key="item.id">
                         <h4 class="name" v-html="item.name"></h4>
                         <span class="number">{{ item.number }}{{ item.number_addition }}.</span>
                         <p class="description" v-html="item.description"></p>
@@ -238,6 +243,7 @@ export default {
         getTotal() {
             return this.order_items.map(item => item.amount * item.price).reduce((a, b) => a + b, 0)
         },
+
         submit() {
             axios.post("/orders/create", this.order_items.map(item => {return {
                 id: item.id,

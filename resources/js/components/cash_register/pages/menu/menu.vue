@@ -111,7 +111,6 @@ export default {
     data: () => ({
         categories: [],
         menu_items: [],
-        order_items: [],
     }),
     created() {
         axios.get("/categories")

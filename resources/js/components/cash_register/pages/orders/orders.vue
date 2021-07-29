@@ -162,7 +162,6 @@ export default {
 
                 return !(date < start_date || date > end_date)
             })
-            console.log(this.view_order_items)
         },
         getRevenue() {
             return this.view_order_items.map(item => item.subtotal).reduce((a, b) => a + b, 0)

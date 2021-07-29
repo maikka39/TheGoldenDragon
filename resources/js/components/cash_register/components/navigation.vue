@@ -5,6 +5,7 @@
             <li class="item"><router-link to="/cashregister/">Kassa</router-link></li>
             <li class="item"><router-link to="/cashregister/menu">Gerechten</router-link></li>
             <li class="item"><router-link to="/cashregister/orders">Verkoop Overzicht</router-link></li>
+            <li class="item"><router-link to="/cashregister/discounts">Aanbiedingen</router-link></li>
             <li class="item"><router-link to="/logout">Log uit</router-link></li>
         </ul>
     </nav>

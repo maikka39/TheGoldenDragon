@@ -10,6 +10,7 @@ import CashRegister from "./components/cash_register/cash_register"
 import CashRegisterDefault from "./components/cash_register/pages/default/default"
 import CashRegisterMenu from "./components/cash_register/pages/menu/menu"
 import CashRegisterOrders from "./components/cash_register/pages/orders/orders"
+import CashRegisterDiscounts from "./components/cash_register/pages/discounts/discounts"
 import NotFound from "./components/not_found"
 
 Vue.use(VueRouter)
@@ -58,6 +59,10 @@ const router = new VueRouter({
         {
           path: 'orders',
           component: CashRegisterOrders,
+        },
+        {
+          path: 'discounts',
+          component: CashRegisterDiscounts,
         },
       ]
     },

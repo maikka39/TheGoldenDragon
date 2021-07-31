@@ -141,7 +141,7 @@ export default {
             }
 
             var now = new Date();
-            var expiry_date = new Date(now.getFullYear(), now.getMonth(), now.getDate()+7);
+            var expiry_date = new Date(now.getFullYear(), now.getMonth(), now.getDate() - now.getDay() + 15)
 
             axios.post("/discounts/create", {
                 menu_item_id: this.currentItem().id,

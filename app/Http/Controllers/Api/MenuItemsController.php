@@ -27,7 +27,7 @@ class MenuItemsController extends Controller
     public function pdf()
     {
         $categories = Category::all();
-        $discounts = Discount::where('expiry_date', '>', Date::yesterday())->get();
+        $discounts = Discount::where('expiry_date', '>', Date::yesterday())->orderBy('expiry_date', 'ASC')->get();
         $pdf = App::make('dompdf.wrapper');
         view()->share('categories', $categories);
         view()->share('discounts', $discounts);

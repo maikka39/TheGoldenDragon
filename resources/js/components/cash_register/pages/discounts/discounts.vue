@@ -16,7 +16,7 @@
         <div class="order-items-container">
             <div class="order-items items-container">
                 <ul class="items">
-                    <li class="item" v-for="item in discounted_items" :key="item.id">
+                    <li class="item" v-for="item in discountedItems()" :key="item.id">
                         <h4 class="name" v-html="item.name"></h4>
                         <span class="old_price">{{ euro(item.old_price) }}</span>
                         <span class="new_price">{{ euro(item.new_price) }}</span>
@@ -156,6 +156,14 @@ export default {
                 axios.get("/discounts/items")
                     .then(data => (this.discounted_items = data.data.data))
             })
+        },
+
+        discountedItems() {
+            let today = new Date().setHours(0,0,0,0)
+
+            return [...this.discounted_items]
+                .filter(a => new Date(a.expiry_date) >= today)
+                .sort((a, b) => new Date(a.expiry_date) - new Date(b.expiry_date))
         },
 
         currentItem() {

@@ -1,10 +1,6 @@
 <template>
     <div id="default">
         <div class="date">
-            <!-- <label for="start_date">Start datum</label>
-            <input id="start_date" name="start_date" type="date" v-model="start_date">
-            <label for="end_date">Eind datum</label>
-            <input id="end_date" name="end_date" type="date" v-model="end_date"> -->
             <select v-model="selected_menu_item_id">
                 <option disabled value="">Selecteer een gerecht</option>
                 <option v-for="item in menu_items" :key="item.id" :value="item.id">{{ item.number }}{{ item.number_addition }}. {{ item.name }}</option>
@@ -15,14 +11,7 @@
             <button type="button" @click="createDiscaount()">Maak aanbieding</button>
         </div>
 
-        <div class="total">
-            <!-- <h3 class="title">Omzet</h3>
-            <span class="amount">{{ euro(getRevenue()) }}</span>
-            <h3 class="title">BTW</h3>
-            <span class="amount">{{ euro(getVat()) }}</span>
-            <h3 class="title">excl. BTW</h3>
-            <span class="amount">{{ euro(getRevenue() - getVat()) }}</span> -->
-        </div>
+        <div class="total"></div>
 
         <div class="order-items-container">
             <div class="order-items items-container">

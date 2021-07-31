@@ -3,11 +3,8 @@
 namespace Database\Seeders;
 
 use App\Models\MenuItem;
-use App\Models\Order;
-use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Date;
-use Illuminate\Support\Facades\DB;
 
 class DiscountsTableSeeder extends Seeder
 {

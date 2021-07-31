@@ -40,7 +40,36 @@
     <div class="title">
         <h2>Aanbiedingen</h2>
     </div>
-    <p>Geen aanbiedingen gevonden.</p>
+    @if ($discounts->count() > 0)
+        <table class="discounts">
+            @foreach ($discounts as $index => $discount)
+                @php
+                    $menu_item = $discount->menuItem()->first();
+                @endphp
+                @if ($index > 1 && $index % 2 == 0)
+                    </tr>
+                @endif
+                @if ($index % 2 == 0)
+                    <tr>
+                @endif
+                <td class="discount">
+                    <span class="expiry_date">Verloopt op {{ $discount->expiry_date->format('m-d-Y') }}</span>
+                    <h3 class="name">{{ $menu_item->number }}{{ $menu_item->number_addition }}.
+                        {!! $menu_item->name !!}</h3>
+                    <p class="old-price">Oude prijs: &euro;{{ number_format($menu_item->price, 2) }}</p>
+                    <span class="price">
+                        &euro;{{ number_format($discount->new_price, 2) }}
+                    </span>
+                    <p class="new-price">Aanbieding prijs:</p>
+                </td>
+            @endforeach
+            @if ($index > 0)
+                </tr>
+            @endif
+        </table>
+    @else
+        <p>Geen aanbiedingen gevonden.</p>
+    @endif
 </body>
 
 </html>

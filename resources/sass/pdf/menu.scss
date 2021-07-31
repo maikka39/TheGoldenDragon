@@ -1,3 +1,7 @@
+.page-break {
+    page-break-after: always;
+}
+
 .title {
     text-align: center;
 
@@ -60,6 +64,59 @@
     }
 }
 
-.page-break {
-    page-break-after: always;
+.discounts {
+    text-align: center;
+    width: 730px;
+    display: table;
+    table-layout: fixed;
+    border-spacing: 10px;
+    border-collapse: separate;
+    width: 700px;
+    margin: 2rem auto 0;
+
+    .discount {
+        display: table-cell;
+        text-align: start;
+        background-color: yellow;
+        border: red dashed 2px;
+        width: 300px;
+        // margin: 400px;
+        padding: 10px;
+        position: relative;
+
+        .name {
+            display: inline-block;
+            margin: 0.2em 0;
+        }
+
+        .expiry_date {
+            display: block;
+            float: right;
+            font-size: 0.8em;
+        }
+
+        .new-price {
+            font-size: 1.2em;
+        }
+
+        .price {
+            background: red;
+            display: block;
+            float: right;
+            border-radius: 100%;
+            padding: 0.5rem;
+            font-size: 1.5em;
+        }
+
+        .star {
+            // position: absolute;
+            right: 1rem;
+            bottom: 1rem;
+
+            &:before {
+                content: "\2605";
+                position: absolute;
+            }
+        }
+    }
 }

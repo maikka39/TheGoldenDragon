@@ -19,6 +19,10 @@ class Discount extends Model
         'expiry_date',
     ];
 
+    protected $casts = [
+        'expiry_date'  => 'date:Y-m-d',
+    ];
+
     public function menuItem(): BelongsTo
     {
         return $this->belongsTo(MenuItem::class);

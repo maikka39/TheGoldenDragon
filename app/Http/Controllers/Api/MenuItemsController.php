@@ -6,8 +6,10 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\CategoryCollection;
 use App\Http\Resources\MenuItemCollection;
 use App\Models\Category;
+use App\Models\Discount;
 use App\Models\MenuItem;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Date;
 
 class MenuItemsController extends Controller
 {
@@ -24,10 +26,12 @@ class MenuItemsController extends Controller
 
     public function pdf()
     {
-        $data = Category::all();
+        $categories = Category::all();
+        $discounts = Discount::where('expiry_date', '>', Date::now())->get();
         $pdf = App::make('dompdf.wrapper');
-        view()->share('categories', $data);
-        $pdf->loadView('pdf.menu', $data);
+        view()->share('categories', $categories);
+        view()->share('discounts', $discounts);
+        $pdf->loadView('pdf.menu');
         return $pdf->stream();
         // return $pdf->download('menu.pdf');
     }

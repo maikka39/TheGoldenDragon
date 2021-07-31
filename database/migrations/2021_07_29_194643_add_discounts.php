@@ -17,7 +17,7 @@ class AddDiscounts extends Migration
             $table->id();
             $table->unsignedBigInteger('menu_item_id');
             $table->double('new_price', 10, 2);
-            $table->dateTime('expiry_date');
+            $table->date('expiry_date');
 
             $table->foreign('menu_item_id')->references('id')->on('menu_items');
         });

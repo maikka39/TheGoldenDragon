@@ -8,6 +8,7 @@
             <p>Huidige prijs: {{ euro(currentItem().price) }}</p>
             <label for="new_price">Nieuwe prijs: &euro;</label>
             <input id="new_price" name="new_price" type="number" v-model="new_price" :min="0">
+            <input id="expiry_date" name="expiry_date" type="date" v-model="expiry_date" :min="0">
             <button type="button" @click="createDiscaount()">Maak aanbieding</button>
         </div>
 
@@ -109,13 +110,18 @@
 import axios from "axios"
 
 export default {
-    data: () => ({
+    data: () => {
+        var now = new Date();
+        var expiry_date = new Date(now.getFullYear(), now.getMonth(), now.getDate() - now.getDay() + 15)
+
+        return ({
         categories: [],
         menu_items: [],
         discounted_items: [],
         selected_menu_item_id: '',
         new_price: 0,
-    }),
+        expiry_date: expiry_date.toISOString().split('T')[0],
+    })},
     created() {
         axios.get("/categories")
             .then(data => (this.categories = data.data.data))
@@ -140,13 +146,10 @@ export default {
                 return
             }
 
-            var now = new Date();
-            var expiry_date = new Date(now.getFullYear(), now.getMonth(), now.getDate() - now.getDay() + 15)
-
             axios.post("/discounts/create", {
                 menu_item_id: this.currentItem().id,
                 new_price: this.new_price,
-                expiry_date: expiry_date.toISOString(),
+                expiry_date: this.expiry_date,
             }).then(() => {
                 alert("Aanbieding verstuurd")
 

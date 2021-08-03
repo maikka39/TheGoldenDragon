@@ -14,8 +14,8 @@
 
         <div class="total"></div>
 
-        <div class="order-items-container">
-            <div class="order-items items-container">
+        <div class="discount-items-container">
+            <div class="discount-items items-container">
                 <ul class="items">
                     <li class="item" v-for="item in discountedItems()" :key="item.id">
                         <h4 class="name" v-html="item.name"></h4>
@@ -42,7 +42,7 @@
         "date total"
         "items items";
 
-    .order-items-container {
+    .discount-items-container {
         grid-area: items;
         display: flex;
         justify-content: center;
@@ -50,7 +50,7 @@
         padding: 1rem;
         height: 75vh;
 
-        .order-items {
+        .discount-items {
             border: 1px solid #0066ff;
             border-radius: 5px;
             max-width: 1100px;

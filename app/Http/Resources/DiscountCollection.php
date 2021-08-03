@@ -21,7 +21,7 @@ class DiscountCollection extends ResourceCollection
                 return [
                     "id" => $discount->id,
                     "menu_item_id" => $menu_item->id,
-                    "name" => $menu_item->name,
+                    "name" =>  $menu_item->number . $menu_item->number_addition . ". " . $menu_item->name,
                     "old_price" => $menu_item->price,
                     "new_price" => $discount->new_price,
                     "expiry_date" => $discount->expiry_date,

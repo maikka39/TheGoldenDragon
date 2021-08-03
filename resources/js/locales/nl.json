@@ -47,7 +47,10 @@
             "download": "Download"
         },
         "discounts": {
-            "title": "Aanbiedingen"
+            "title": "Aanbiedingen",
+            "expires_at": "Verloopt op",
+            "old_price": "Oude prijs",
+            "discount_price": "Aanbieding prijs"
         }
     }
 }

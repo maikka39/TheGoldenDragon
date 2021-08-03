@@ -47,7 +47,10 @@
             "download": "Download"
         },
         "discounts": {
-            "title": "Discounts"
+            "title": "Discounts",
+            "expires_at": "Expires at",
+            "old_price": "Old price",
+            "discount_price": "Discounted price"
         }
     }
 }

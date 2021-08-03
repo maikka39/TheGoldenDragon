@@ -3,6 +3,7 @@ import VueRouter from "vue-router"
 import Home from "./components/home/home"
 import HomeContact from "./components/home/pages/contact/contact"
 import HomeDefault from "./components/home/pages/default/default"
+import HomeDiscounts from "./components/home/pages/discounts/discounts"
 import HomeMenu from "./components/home/pages/menu/menu"
 import HomeNews from "./components/home/pages/news/news"
 import Login from "./components/login"
@@ -38,6 +39,10 @@ const router = new VueRouter({
         {
           path: 'contact',
           component: HomeContact,
+        },
+        {
+          path: 'discounts',
+          component: HomeDiscounts,
         },
       ]
     },

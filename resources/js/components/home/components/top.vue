@@ -6,9 +6,7 @@
             <img src="/img/dragon-small.png" alt="Draak" class="flipped">
         </router-link>
         <div class="scrolling-text">
-            <a class="scroll" href="#">
-                {{ $t("sliding_text.text") }}
-            </a>
+            <router-link class="scroll" to="/discounts">{{ $t("sliding_text.text") }}</router-link>
         </div>
         <router-link to="/" class="logo">
             <img src="/img/dragon-small.png" alt="Draak">

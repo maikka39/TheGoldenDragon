@@ -43,7 +43,11 @@
         },
         "menu": {
             "title": "Menu",
+            "discounts": "Discounts",
             "download": "Download"
+        },
+        "discounts": {
+            "title": "Discounts"
         }
     }
 }

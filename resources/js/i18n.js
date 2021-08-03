@@ -19,6 +19,13 @@ function getBrowserLocale(options = {}) {
     : navigatorLocale.trim()
 }
 
+function getLocale(options = {}) {
+  if (Vue.$cookies.isKey("language"))
+      return Vue.$cookies.get("language")
+
+  return getBrowserLocale(options)
+}
+
 
 function loadLocaleMessages() {
     const locales = require.context(
@@ -39,7 +46,7 @@ function loadLocaleMessages() {
 
 
 export default new VueI18n({
-    locale: getBrowserLocale({ countryCodeOnly: true }),
+    locale: getLocale({ countryCodeOnly: true }),
     fallbackLocale: process.env.VUE_APP_I18N_FALLBACK_LOCALE || "nl",
     messages: loadLocaleMessages()
 });

@@ -3,10 +3,11 @@ import App from "./components/app.vue"
 import router from "./router"
 import store from "./store"
 import axios from "axios"
-import i18n from "./i18n";
 
 import "./cookies"
 import "bootstrap"
+
+import i18n from "./i18n";
 
 new Vue({
     el: "#app",

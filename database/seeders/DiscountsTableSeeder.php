@@ -28,8 +28,8 @@ class DiscountsTableSeeder extends Seeder
                 'expiry_date' => Date::now()->endOfWeek(),
             ],
             [
-                'menu_item_id' => 168,
-                'new_price' => 14,
+                'menu_item_id' => 5,
+                'new_price' => 2.5,
                 'expiry_date' => Date::now()->endOfWeek(),
             ],
         ];

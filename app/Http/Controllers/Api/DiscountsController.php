@@ -15,7 +15,7 @@ class DiscountsController extends Controller
 {
     public function items()
     {
-        return new DiscountCollection(Discount::all());
+        return new DiscountCollection(Discount::where('expiry_date', '>', Date::yesterday())->get());
     }
 
     public function create(Request $request)

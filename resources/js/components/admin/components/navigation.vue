@@ -2,14 +2,12 @@
     <nav class="nav">
         <div class="start">
             <img class="logo" src="/img/goodpay_logo.png" alt="Goodpay logo">
-            <span class="section">Kassa</span>
+            <span class="section">Admin</span>
         </div>
         <ul class="items">
+            <li class="item"><router-link to="/admin/">Start</router-link></li>
+            <li class="item"><router-link to="/admin/menu">Gerechten</router-link></li>
             <li class="item"><router-link to="/cashregister/">Kassa</router-link></li>
-            <li class="item"><router-link to="/cashregister/menu">Gerechten</router-link></li>
-            <li class="item"><router-link to="/cashregister/orders">Verkoop Overzicht</router-link></li>
-            <li class="item"><router-link to="/cashregister/discounts">Aanbiedingen</router-link></li>
-            <li class="item"><router-link to="/admin/">Admin</router-link></li>
             <li class="item"><router-link to="/logout">Log uit</router-link></li>
         </ul>
     </nav>

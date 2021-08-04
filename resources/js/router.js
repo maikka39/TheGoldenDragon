@@ -12,6 +12,9 @@ import CashRegisterDefault from "./components/cash_register/pages/default/defaul
 import CashRegisterMenu from "./components/cash_register/pages/menu/menu"
 import CashRegisterOrders from "./components/cash_register/pages/orders/orders"
 import CashRegisterDiscounts from "./components/cash_register/pages/discounts/discounts"
+import Admin from "./components/admin/admin"
+import AdminDefault from "./components/admin/pages/default/default"
+import AdminMenu from "./components/admin/pages/menu/menu"
 import NotFound from "./components/not_found"
 
 Vue.use(VueRouter)
@@ -68,6 +71,23 @@ const router = new VueRouter({
         {
           path: 'discounts',
           component: CashRegisterDiscounts,
+        },
+      ]
+    },
+    {
+      path: '/admin',
+      meta: {
+        auth: true,
+      },
+      component: Admin,
+      children: [
+        {
+          path: '',
+          component: AdminDefault,
+        },
+        {
+          path: 'menu',
+          component: AdminMenu,
         },
       ]
     },

@@ -1,7 +1,6 @@
 <template>
     <div id="cash_register">
         <Navigation />
-        <h1>Admin</h1>
         <Content class="content">
             <router-view></router-view>
         </Content>

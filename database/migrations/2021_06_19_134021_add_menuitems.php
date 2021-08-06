@@ -21,6 +21,8 @@ class AddMenuitems extends Migration
             $table->integer('number')->nullable();
             $table->string('number_addition')->nullable();
 
+            $table->softDeletes();
+
             $table->unique(array('number', 'number_addition'));
         });
     }

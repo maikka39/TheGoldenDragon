@@ -7,6 +7,7 @@ use App\Http\Controllers\Api\OrdersController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/menuitems', [MenuItemsController::class, 'items']);
+Route::put('/menuitems', [MenuItemsController::class, 'update']);
 Route::get('/menuitems/pdf', [MenuItemsController::class, 'pdf']);
 
 Route::get('/orders/items', [OrdersController::class, 'items']);

@@ -4,7 +4,7 @@
             <div v-for="category in categories" :key="category.id">
                 <h3 class="title">{{ category.name }}</h3>
                 <ul class="items">
-                    <div class="item" v-for="item in menu_items.filter(menu_item => menu_item.category_id === category.id)" :key="item.id">
+                    <div class="item" v-for="item in sortedMenuItems().filter(menu_item => menu_item.category_id === category.id)" :key="item.id">
                         <h4 class="name" v-html="item.name"></h4>
                         <span class="number">{{ item.number }}{{ item.number_addition }}.</span>
                         <p class="description" v-html="item.description"></p>
@@ -126,6 +126,20 @@ export default {
             })
 
             return f.format(price)
+        },
+
+        sortedMenuItems() {
+            return [...this.menu_items].sort((a, b) => {
+                if (a.number > b.number) return 1
+
+                if (a.number !== b.number) return -1
+
+                if (b.number_addition === null) return 1
+
+                if (a.number_addition > b.number_addition) return 1
+
+                return -1
+            })
         },
     },
 }

@@ -3,7 +3,7 @@
         <div v-for="category in categories" :key="category.id">
             <h3>{{ category.name }}</h3>
             <ul class="items">
-                <MenuItem v-bind="menu_item" v-for="menu_item in menu_items.filter(menu_item => menu_item.category_id === category.id)" :key="menu_item.id" />
+                <MenuItem v-bind="menu_item" v-for="menu_item in sortedMenuItems().filter(menu_item => menu_item.category_id === category.id)" :key="menu_item.id" />
             </ul>
         </div>
     </div>
@@ -46,6 +46,21 @@ export default {
       .then(data => (this.categories = data.data.data))
     axios.get("/menuitems")
       .then(data => (this.menu_items = data.data.data))
+  },
+  methods: {
+    sortedMenuItems() {
+      return [...this.menu_items].sort((a, b) => {
+        if (a.number > b.number) return 1
+
+        if (a.number !== b.number) return -1
+
+        if (b.number_addition === null) return 1
+
+        if (a.number_addition > b.number_addition) return 1
+
+        return -1
+      })
+    },
   },
   components: { MenuItem }
 }

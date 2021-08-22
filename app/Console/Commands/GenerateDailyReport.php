@@ -98,7 +98,7 @@ class GenerateDailyReport extends Command
 
         $daily_report = new DailyReport;
         $daily_report->date = Carbon::today();
-        $daily_report->filename = "daily_reports/" . $date . ".xlsx";
+        $daily_report->filename = "/daily_reports/" . $date . ".xlsx";
         $daily_report->save();
 
         return 0;

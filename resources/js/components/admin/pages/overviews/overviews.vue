@@ -5,7 +5,7 @@
             <ul>
                 <li v-for="overview in overviews" :key="overview.id">
                     <h3 class="date">{{ overview.date }}</h3>
-                    <a class="download" :href="overview.download">Download</a>
+                    <a class="download" :href="overview.filename">Download</a>
                 </li>
             </ul>
         </div>
@@ -94,7 +94,7 @@ export default {
         overviews: [],
     }),
     created() {
-        axios.get("/overviews")
+        axios.get("/daily_reports")
             .then(data => (this.overviews = data.data.data))
     },
     methods: {

@@ -15,6 +15,7 @@ import CashRegisterDiscounts from "./components/cash_register/pages/discounts/di
 import Admin from "./components/admin/admin"
 import AdminDefault from "./components/admin/pages/default/default"
 import AdminMenu from "./components/admin/pages/menu/menu"
+import AdminOverviews from "./components/admin/pages/overviews/overviews"
 import NotFound from "./components/not_found"
 
 Vue.use(VueRouter)
@@ -88,6 +89,10 @@ const router = new VueRouter({
         {
           path: 'menu',
           component: AdminMenu,
+        },
+        {
+          path: 'overviews',
+          component: AdminOverviews,
         },
       ]
     },

@@ -7,6 +7,7 @@
         <ul class="items">
             <li class="item"><router-link to="/admin/">Start</router-link></li>
             <li class="item"><router-link to="/admin/menu">Gerechten</router-link></li>
+            <li class="item"><router-link to="/admin/overviews/">Overzichten</router-link></li>
             <li class="item"><router-link to="/cashregister/">Kassa</router-link></li>
             <li class="item"><router-link to="/logout">Log uit</router-link></li>
         </ul>

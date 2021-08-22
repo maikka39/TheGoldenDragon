@@ -1,17 +1,46 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Console\Commands;
 
-use App\Http\Controllers\Controller;
+use App\Models\DailyReport;
 use App\Models\Order;
 use Carbon\Carbon;
+use Illuminate\Console\Command;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
-class OverviewsController extends Controller
+class GenerateDailyReport extends Command
 {
+    /**
+     * The name and signature of the console command.
+     *
+     * @var string
+     */
+    protected $signature = 'daily_report:generate';
 
-    public function items()
+    /**
+     * The console command description.
+     *
+     * @var string
+     */
+    protected $description = 'Generates a daily report';
+
+    /**
+     * Create a new command instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
+    /**
+     * Execute the console command.
+     *
+     * @return int
+     */
+    public function handle()
     {
         $date = date('Y-m-d');
         $orders = Order::whereDate('date', Carbon::today())->get();
@@ -65,7 +94,13 @@ class OverviewsController extends Controller
         }
 
         $writer = new Xlsx($spreadsheet);
-        $writer->save("overviews/" . $date . ".xlsx");
-        return '{"data":[{"id": 1, "date": "Date test", "download": "http://example.com"}]}';
+        $writer->save("public/daily_reports/" . $date . ".xlsx");
+
+        $daily_report = new DailyReport;
+        $daily_report->date = Carbon::today();
+        $daily_report->filename = "daily_reports/" . $date . ".xlsx";
+        $daily_report->save();
+
+        return 0;
     }
 }

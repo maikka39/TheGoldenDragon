@@ -16,5 +16,5 @@ public/css
 public/fonts
 public/js
 public/mix-manifest.json
-public/overviews/*
-!public/overviews/.gitkeep
+public/daily_reports/*
+!public/daily_reports/.gitkeep

@@ -4,7 +4,7 @@ use App\Http\Controllers\Api\AuthenticationController;
 use App\Http\Controllers\Api\DiscountsController;
 use App\Http\Controllers\Api\MenuItemsController;
 use App\Http\Controllers\Api\OrdersController;
-use App\Http\Controllers\Api\OverviewsController;
+use App\Http\Controllers\Api\DailyReportsController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/menuitems', [MenuItemsController::class, 'items']);
@@ -19,6 +19,6 @@ Route::post('/discounts/create', [DiscountsController::class, 'create']);
 
 Route::get('/categories', [MenuItemsController::class, 'categories']);
 
-Route::get('/overviews', [OverviewsController::class, 'items']);
+Route::get('/daily_reports', [DailyReportsController::class, 'items']);
 
 Route::post('/login', [AuthenticationController::class, 'login']);

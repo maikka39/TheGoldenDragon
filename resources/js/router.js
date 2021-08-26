@@ -16,6 +16,9 @@ import Admin from "./components/admin/admin"
 import AdminDefault from "./components/admin/pages/default/default"
 import AdminMenu from "./components/admin/pages/menu/menu"
 import AdminOverviews from "./components/admin/pages/overviews/overviews"
+import Customer from "./components/customer/customer"
+import CustomerDefault from "./components/customer/pages/default/default"
+import CustomerCocktailSearch from "./components/customer/pages/cocktail_search/cocktail_search"
 import NotFound from "./components/not_found"
 
 Vue.use(VueRouter)
@@ -47,6 +50,20 @@ const router = new VueRouter({
         {
           path: 'discounts',
           component: HomeDiscounts,
+        },
+      ]
+    },
+    {
+      path: '/customer',
+      component: Customer,
+      children: [
+        {
+          path: '',
+          component: CustomerDefault,
+        },
+        {
+          path: 'cocktails',
+          component: CustomerCocktailSearch,
         },
       ]
     },

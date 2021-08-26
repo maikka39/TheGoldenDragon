@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\Api\AskHelpController;
 use App\Http\Controllers\Api\AuthenticationController;
+use App\Http\Controllers\Api\CocktailsController;
 use App\Http\Controllers\Api\DiscountsController;
 use App\Http\Controllers\Api\MenuItemsController;
 use App\Http\Controllers\Api\OrdersController;
@@ -20,5 +22,8 @@ Route::post('/discounts/create', [DiscountsController::class, 'create']);
 Route::get('/categories', [MenuItemsController::class, 'categories']);
 
 Route::get('/daily_reports', [DailyReportsController::class, 'items']);
+
+Route::get('/cocktails/search/{search}', [CocktailsController::class, 'search']);
+Route::get('/askhelp/{table_id}', [AskHelpController::class, 'help']);
 
 Route::post('/login', [AuthenticationController::class, 'login']);
